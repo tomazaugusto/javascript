@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+
+        <script>
+        	(function()
+        	{
+        		var dataAtual = new Date();
+        		dataAtual.setHours(0);
+        		dataAtual.setMinutes(0);
+        		dataAtual.setSeconds(0);
+        		dataAtual.setMilliseconds(0);
+        		var anoAtual = dataAtual.getFullYear();
+        		var dataNiver = new Date(anoAtual, 9, 1);
+        		var dataAtualTimeStamp = dataAtual.getTime();
+        		var dataNiverTimeStamp = dataNiver.getTime();
+
+        		if(dataNiverTimeStamp === dataAtualTimeStamp)
+        		{
+        			alert('Parabéns pelo seu aniverário!!!');
+        			return;
+        		}
+
+        		if(dataNiverTimeStamp < dataAtualTimeStamp)
+        		{
+        			dataNiver.setFullYear(++anoAtual);
+        			dataNiverTimeStamp = dataNiver.getTime();
+        		}
+
+        		const UM_DIA_TIMESTAMP = 24 * 60 * 60 * 1000;
+        		var diferenca = dataNiverTimeStamp - dataAtualTimeStamp;
+        		console.log(diferenca / UM_DIA_TIMESTAMP);
+        	})()
+        </script>
+    </head>
+
+    <body>
+        <h1>Contagem regressiva para aniverário</h1>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">     
+    </head>
+
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>         
+    </body>
+    
+    <script> 
+        function teste()
+        {
+            console.log(this);
+            setTimeout(function()
+            {
+                console.log(this);
+            }, 1000);
+
+            //mesmo código acima, com Arrow Function
+            setTimeout(()=>
+            {
+                console.log(this);
+            }, 1000);
+        }
+        teste();
+
+        var obj = {foo: teste};
+        obj.foo();
+    </script>
+</html>

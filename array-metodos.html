@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <h1>Array - metódos</h1>
+
+        <script>                    
+            var arr = ['1', 20, 3, 4, 5, 'abc', 20, "30"];
+
+            var soNumeros = arr.every(function(el)
+            {
+                return typeof el === 'number';
+            });
+            console.log('Método every, todos são números: ', soNumeros);
+
+            var aoMenosUmNumero = arr.some(function(el)
+            {
+                return typeof el === 'number';
+            });
+            console.log('Método some, ao menos um é número: ', aoMenosUmNumero);
+
+            var somenteNumeros = arr.filter(function(el)
+            {
+                return typeof el === 'number';
+            });
+            console.log('Método filter, retorna somente números: ', somenteNumeros);
+
+            arr.forEach(function(el, i, arr)
+            {
+                console.log('el =', el, '   |   i =', i, '   |   i -', arr.toString());
+            });
+
+            var posicaoStr1 = arr.indexOf('abc');
+            console.log('posicaoStr1', posicaoStr1);
+
+            var posicaoStr2 = arr.lastIndexOf(20);
+            console.log('posicaoStr2', posicaoStr2);
+
+            console.log(somenteNumeros);
+            somenteNumeros = somenteNumeros.map(function(el, i, arr)
+            {
+                return el * i;
+            });
+            console.log(somenteNumeros);
+        </script>
+    </body>
+
+</html>
